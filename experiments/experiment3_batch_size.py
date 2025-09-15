@@ -37,7 +37,7 @@ def run_experiment3_linear(*generates) -> None:
             })
 
             save_metrics_to_csv(
-                "reports/0experiment3_linear_metrics.csv", 
+                "reports/experiment3_linear_metrics.csv", 
                 metrics, 
                 fieldnames=["model", "batch_size", "final_train_loss", "final_test_loss"]
             )
@@ -52,7 +52,7 @@ def run_experiment3_logistic(*generates) -> None:
     for batch_size in [2, 32, 256, 512, 4092, 8196]:
         w, train_losses, test_losses = gradient_descent(
             X_train, y_train,
-            log_predict, log_loss, log_grad, w_init,
+            log_predict, log_loss, log_grad, w_init, tol=1e-6,
             batch_size=batch_size, X_val=X_test, y_val=y_test
         )
 
@@ -73,7 +73,7 @@ def run_experiment3_logistic(*generates) -> None:
             })
 
             save_metrics_to_csv(
-                "reports/0experiment3_logistic_metrics.csv", 
+                "reports/experiment3_logistic_metrics.csv", 
                 metrics, 
                 fieldnames=["model", "batch_size", "final_train_loss", "final_test_loss"]
             )

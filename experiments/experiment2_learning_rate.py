@@ -38,7 +38,7 @@ def run_experiment2_linear(*generates) -> None:
             })
 
             save_metrics_to_csv(
-                "reports/0experiment2_linear_metrics.csv", 
+                "reports/experiment2_linear_metrics.csv", 
                 metrics, 
                 fieldnames=["model", "learning_rate", "final_train_loss", "final_test_loss"]
             )
@@ -54,7 +54,7 @@ def run_experiment2_logistic(*generates) -> None:
         w, train_losses, test_losses = gradient_descent(
             X_train, y_train,
             log_predict, log_loss, log_grad, w_init,
-            lr=lr, X_val=X_test, y_val=y_test
+            lr=lr, tol=1e-6, X_val=X_test, y_val=y_test
         )
 
         if "figures":
@@ -74,7 +74,7 @@ def run_experiment2_logistic(*generates) -> None:
             })
 
             save_metrics_to_csv(
-                "reports/0experiment2_logistic_metrics.csv", 
+                "reports/experiment2_logistic_metrics.csv", 
                 metrics, 
                 fieldnames=["model", "learning_rate", "final_train_loss", "final_test_loss"]
             )
