@@ -1,3 +1,16 @@
+"""Run linear and logistic regression experiments to compare deep
+learning techniques for weight initialization, learning rates, and
+batch sizes.
+
+Different weights are all zeros or all uniformly distributed.
+Different learning rates are 0.01, 0.05, 0.1, and 0.2.
+Different batch sizes are 2, 32, 256, 512, 4096, and 8192.
+
+Experiments can be run to generate reports, figures, or both.
+Uncomment the experiment that generates what you want and comment the
+rest out (for speed).
+"""
+
 from experiments import (
     experiment1_weight_init as exp1, 
     experiment2_learning_rate as exp2, 
