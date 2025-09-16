@@ -15,7 +15,7 @@ def predict(X: ndarray, w: ndarray) -> ndarray:
         X: input feature matrix, shape (B,D)
         w: input weight vector, shape (D,)
 
-    Return:
+    Returns:
         Predicted probabilities vector, shape (B,)
     """
     return sigmoid(X @ w)
@@ -29,7 +29,7 @@ def loss(X: ndarray, y: ndarray, w: ndarray) -> float64:
         y: labels, shape (B,)
         w: weights, shape (D,)
 
-    Return:
+    Returns:
         Scalar loss of the output
     """
     y_hat = predict(X, w)

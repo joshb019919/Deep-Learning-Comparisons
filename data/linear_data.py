@@ -5,6 +5,9 @@ def generate_linear_data(n_train=8196, n_test=8196, seed=42
     ) -> tuple[ndarray, ndarray, ndarray, ndarray]:
     """Generate synthetic data for linear regression.
 
+    **Features are from the distribution**:
+        x ~ N[0, 1]^4
+
     Args:
         n_train: number of training samples
         n_test: number of testing samples

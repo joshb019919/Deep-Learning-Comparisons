@@ -6,8 +6,8 @@ def predict(X: ndarray, w: ndarray):
 
 def loss(X: ndarray, y: ndarray, w: ndarray):
     """Compute mean squared error (MSE) loss."""
-    return ((X @ w - y)**2).mean()
+    return ((predict(X,w) - y)**2).mean()
 
 def gradient(X: ndarray, y: ndarray, w: ndarray):
     """Compute gradient of MSE with respect to weights."""
-    return 2 * X.T @ (X @ w - y) / X.shape[0]
+    return 2 * X.T @ (predict(X,w) - y) / X.shape[0]

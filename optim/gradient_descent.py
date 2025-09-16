@@ -3,7 +3,6 @@ from typing import Callable, List, Optional, Tuple
 from numpy import float64, ndarray
 
 def gradient_descent(X: ndarray, y: ndarray, 
-                     predict_fn: Callable[[ndarray, ndarray], ndarray], 
                      loss_fn: Callable[[ndarray, ndarray, ndarray], float64], 
                      grad_fn: Callable[[ndarray, ndarray, ndarray], ndarray],
                      w_init: ndarray, lr=0.1, batch_size=32, max_iters=2000, 

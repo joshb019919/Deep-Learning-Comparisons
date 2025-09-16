@@ -14,7 +14,7 @@ def generate_logistic_data(n_per_class=4096, seed=42
         n_per_class: number of training/testing samples per class
         seed: gets rid of randomness for reproducibility
 
-    Return:
+    Returns:
         X_train: training features, shape (2*n_per_class, 4)
         X_test: training labels (0 or 1), shape (2*n_per_class,)
         y_train: testing features, shape (2*n_per_class, 4)
@@ -28,16 +28,16 @@ def generate_logistic_data(n_per_class=4096, seed=42
     cov = np.eye(d)
 
     # Training samples (feature data)
-    X_train0 = np.random.multivariate_normal(mean0, cov, n_per_class)
-    X_train1 = np.random.multivariate_normal(mean1, cov, n_per_class)
-    y_train0 = np.zeros(n_per_class)
-    y_train1 = np.ones(n_per_class)
+    X_train0 = np.random.multivariate_normal(mean0, cov, n_per_class//2)
+    X_train1 = np.random.multivariate_normal(mean1, cov, n_per_class//2)
+    y_train0 = np.zeros(n_per_class//2)
+    y_train1 = np.ones(n_per_class//2)
 
     # Testing samples (data labels)
-    X_test0 = np.random.multivariate_normal(mean0, cov, n_per_class)
-    X_test1 = np.random.multivariate_normal(mean1, cov, n_per_class)
-    y_test0 = np.zeros(n_per_class)
-    y_test1 = np.ones(n_per_class)
+    X_test0 = np.random.multivariate_normal(mean0, cov, n_per_class//2)
+    X_test1 = np.random.multivariate_normal(mean1, cov, n_per_class//2)
+    y_test0 = np.zeros(n_per_class//2)
+    y_test1 = np.ones(n_per_class//2)
 
     # Combine into one collection, each
     X_train = np.vstack([X_train0, X_train1])
